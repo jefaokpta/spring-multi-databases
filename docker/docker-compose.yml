@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  db-test:
+    image: mariadb:10.4
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db-data:/var/lib/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: test
+        MYSQL_USER: test
+        MYSQL_PASSWORD: test

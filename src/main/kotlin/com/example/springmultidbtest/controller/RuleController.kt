@@ -1,6 +1,6 @@
 package com.example.springmultidbtest.controller
 
-import com.example.springmultidbtest.repository.local.PersonRepository
+import com.example.springmultidbtest.repository.remote.RuleRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RestController
  * Date: 09/07/23
  */
 @RestController
-@RequestMapping("/persons")
-class PersonController(private val personRepository: PersonRepository) {
+@RequestMapping("/rules")
+class RuleController(private val ruleRepository: RuleRepository) {
 
     @GetMapping
-    fun getAll() = personRepository.findAll()
+    fun getAll() = ruleRepository.findAll()
+
 }
